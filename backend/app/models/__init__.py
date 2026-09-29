@@ -54,6 +54,17 @@ from app.models.tender import (
     TenderRequirement,
     TenderProposalSection,
 )
+from app.models.operations import (
+    ProposalStatus,
+    InvoiceStatus,
+    SocialPlatform,
+    Proposal,
+    ProposalLineItem,
+    Invoice,
+    InvoiceLineItem,
+    PortfolioCaseStudy,
+    SocialPost,
+)
 
 __all__ = [
     "Base",
@@ -103,4 +114,13 @@ __all__ = [
     "Tender",
     "TenderRequirement",
     "TenderProposalSection",
+    "ProposalStatus",
+    "InvoiceStatus",
+    "SocialPlatform",
+    "Proposal",
+    "ProposalLineItem",
+    "Invoice",
+    "InvoiceLineItem",
+    "PortfolioCaseStudy",
+    "SocialPost",
 ]

@@ -12,6 +12,8 @@ import { ProjectsPage } from './pages/Projects';
 import { ServicesPage } from './pages/Services';
 import { VaultPage } from './pages/Vault';
 import { TendersPage } from './pages/Tenders';
+import { ProposalsPage } from './pages/Proposals';
+import { InvoicesPage } from './pages/Invoices';
 import { AuditPage } from './pages/Audit';
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -54,8 +56,11 @@ export const App: React.FC = () => {
             <Route path="vault" element={<VaultPage />} />
             <Route path="tenders" element={<TendersPage />} />
             <Route path="tenders/:id" element={<TendersPage />} />
+            <Route path="proposals" element={<ProposalsPage />} />
+            <Route path="invoices" element={<InvoicesPage />} />
             <Route path="audit" element={<AuditPage />} />
           </Route>
+
 
           {/* Root redirect */}
           <Route path="*" element={<Navigate to="/app/dashboard" replace />} />

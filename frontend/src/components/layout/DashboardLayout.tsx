@@ -9,11 +9,14 @@ import {
   FileCheck2,
   FolderLock,
   History,
+  FileText,
+  Receipt,
   Sparkles,
   LogOut,
   Bell,
   Search,
 } from 'lucide-react';
+
 import { useAuth } from '../../context/AuthContext';
 import { AskBizBookModal } from '../common/AskBizBookModal';
 
@@ -30,9 +33,12 @@ export const DashboardLayout: React.FC = () => {
     { name: 'Projects & Evidence', path: '/app/projects', icon: Layers },
     { name: 'Services Catalog', path: '/app/services', icon: Briefcase },
     { name: 'Document Vault', path: '/app/vault', icon: FolderLock },
-    { name: 'Tenders & Proposals', path: '/app/tenders', icon: FileCheck2 },
+    { name: 'Tenders & Bids', path: '/app/tenders', icon: FileCheck2 },
+    { name: 'Proposals & Quotes', path: '/app/proposals', icon: FileText },
+    { name: 'Invoices & Billing', path: '/app/invoices', icon: Receipt },
     { name: 'Audit & Governance', path: '/app/audit', icon: History },
   ];
+
 
   const handleLogout = () => {
     logout();

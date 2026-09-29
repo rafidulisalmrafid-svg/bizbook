@@ -34,9 +34,15 @@
 - Implemented structured Submission Package ZIP exporter with cover letter, compliance matrix CSV, generated proposal markdown, and bundled evidence documents.
 - Passed 8/8 automated test suites (`test_tender_ai.py`).
 
-## Phase 5: Business Operations (In Progress)
-- Proposals, Quotations (line items, discounts, taxes), Invoices (Draft, Sent, Paid, Partially Paid, Overdue, Cancelled).
-- Portfolio case studies derived from completed projects (client-approved vs private evidence).
-- AI Social Copy generator (LinkedIn, Twitter, Facebook).
-- Executive Dashboard analytics endpoint aggregating active projects, open proposals, pending invoices, active tenders, and expiring documents.
+## Phase 5: Business Operations & Delivery (COMPLETED)
+- Database models created: `Proposal`, `ProposalLineItem`, `Invoice`, `InvoiceLineItem`, `PortfolioCaseStudy`, `SocialPost`.
+- Alembic migration `e82cf440b675_operations_and_invoicing_models.py` generated and applied.
+- Commercial Proposals & Quotations engine with line items, tax rate, and discounts.
+- Full Invoices & Billing lifecycle (Draft, Sent, Partially Paid, Paid, Overdue, Cancelled).
+- Portfolio Case Studies engine distinguishing client-approved public marketing vs internal private evidence.
+- Grounded AI Social Media Copy Generator (LinkedIn, Twitter, Facebook) with automatic cost/token logging.
+- Executive Dashboard analytics endpoint aggregating real-time metrics (clients, proposals, invoices, tenders, expiring documents, audit trail).
+- Frontend updated with Proposals and Invoices pages, complete 11-route navigation, and verified production build.
+- Passed 9/9 automated test suites (100% pass rate).
+
 

@@ -30,6 +30,15 @@ from app.models.business import (
     Service,
     AuditLog,
 )
+from app.models.document import (
+    DocumentProcessingState,
+    DocumentCategory,
+    ApprovalStatus,
+    Document,
+    DocumentVersion,
+    DocumentTemplate,
+    SignatureApprovalWorkflow,
+)
 
 __all__ = [
     "Base",
@@ -61,4 +70,11 @@ __all__ = [
     "ProjectDocument",
     "Service",
     "AuditLog",
+    "DocumentProcessingState",
+    "DocumentCategory",
+    "ApprovalStatus",
+    "Document",
+    "DocumentVersion",
+    "DocumentTemplate",
+    "SignatureApprovalWorkflow",
 ]

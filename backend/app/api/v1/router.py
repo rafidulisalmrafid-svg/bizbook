@@ -8,6 +8,8 @@ from app.api.v1.endpoints import (
     projects,
     services,
     audit,
+    documents,
+    templates,
 )
 
 api_router = APIRouter()
@@ -18,4 +20,6 @@ api_router.include_router(team.router, prefix="/team", tags=["Team Management"])
 api_router.include_router(clients.router, prefix="/clients", tags=["Clients Directory"])
 api_router.include_router(projects.router, prefix="/projects", tags=["Projects Portfolio"])
 api_router.include_router(services.router, prefix="/services", tags=["Services Catalog"])
+api_router.include_router(documents.router, prefix="/documents", tags=["Document Vault"])
+api_router.include_router(templates.router, prefix="/templates", tags=["Template Engine"])
 api_router.include_router(audit.router, prefix="/audit", tags=["Audit & Governance"])

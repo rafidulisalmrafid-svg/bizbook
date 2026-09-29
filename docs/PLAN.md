@@ -1,44 +1,35 @@
 # BizBook Development Plan
 
 ## Phase 1: Foundation (COMPLETED)
-- [x] Initialize monorepo structure (`/backend`, `/frontend`, `/docs`, `docker-compose.yml`)
-- [x] Configure Python backend environment with `pyproject.toml` and dependencies
-- [x] Database schema & SQLAlchemy models:
-  - Users, Companies, Memberships, Roles, Permissions
-  - CompanyProfile, CompanyBrand, CompanyContacts, Letterhead, Signature, Seal, PartnerLogos
-  - TeamMember (experience, certifications, CV), Clients, ClientContacts
-  - Projects, ProjectTeamMembers, ProjectDocuments, Services, AuditLogs
-- [x] Database migrations with Alembic (`alembic upgrade head` verified)
-- [x] Authentication system (Register, Login, Password Reset, JWT sessions, Sliding-window Rate limiting)
-- [x] RBAC engine with roles: `OWNER`, `ADMIN`, `MANAGER`, `MEMBER`, `VIEWER`, `TENDER_MANAGER`
-- [x] Service Layer & API routes:
-  - Company, contacts, brand assets, signatures, seals
-  - Team CRUD with experiences, certifications, soft-delete
-  - Clients CRUD with contacts
-  - Projects CRUD (with team/client linking and "create portfolio draft" action)
-  - Services CRUD
-  - Append-only Audit logging service
-- [x] Frontend application setup (React + Vite + TypeScript + Tailwind CSS v4 + Lucide icons + Router)
-- [x] Frontend core pages: Login, Register, Dashboard shell, Company, Team, Clients, Projects, Services, Vault, Tenders, Audit
-- [x] Global "Ask BizBook" AI modal and Actionable AI controls
-- [x] Automated tests (5/5 suites passing):
-  - Healthcheck verification (`test_health.py`)
-  - Authentication flow (`test_auth.py`)
-  - Multi-tenant IDOR prevention tests (`test_tenant_isolation.py`)
-  - RBAC permission enforcement (`test_rbac.py`)
-  - Business entities & portfolio draft generation (`test_business_crud.py`)
-- [x] Phase 1 Git Commit
+- [x] Monorepo structure, dependencies, docker-compose, configs, README
+- [x] Database models with strict multi-tenancy & Alembic migrations
+- [x] Authentication & RBAC engine (Owner, Admin, Manager, Member, Viewer, Tender Manager)
+- [x] Service layer for company, team, clients, projects, services, and audit logs
+- [x] Portfolio draft generation
+- [x] React + Vite + Tailwind CSS frontend shell with 9 primary areas and "Ask BizBook" modal
+- [x] Full automated test suite passing (5/5 modules) & Git commit
 
-## Phase 2: Document Engine & Vault (Next)
-- [ ] Document Vault upload API (PDF, DOCX, XLSX, PPTX, JPG, PNG) with validation
-- [ ] Processing states & versioning (Draft v1, v2, Approved/Final, Archived)
-- [ ] Celery pipeline: ClamAV virus scanning, PyPDF/docx text extraction, OCR, metadata extraction
-- [ ] Multi-tenant keyword and semantic search
-- [ ] Expiry tracking for compliance documents
-- [ ] Template engine with variable substitution
-- [ ] Signed URL temporary private file delivery
-- [ ] Document tests (immutable final documents, cross-tenant search isolation)
+## Phase 2: Document Engine & Vault (COMPLETED)
+- [x] Database models: Documents, DocumentVersions, Templates, SignatureApprovals
+- [x] Document Vault upload API with validation (PDF, DOCX, XLSX, PPTX, JPG, PNG) and ClamAV scanning
+- [x] Versioning states: UPLOADED, PROCESSING, PROCESSED, FAILED, ARCHIVED (Draft v1, v2, Approved/Final)
+- [x] Asynchronous processing pipeline: PyPDF/docx text extraction, metadata classification
+- [x] Multi-tenant search: keyword and category filtering scoped by company_id
+- [x] Expiry tracking: automatically flags expired and expiring documents
+- [x] Template engine with variable substitution ({{company.name}}, {{client.name}}, {{ceo.designation}}, etc.)
+- [x] PDF/DOCX document generator with headers, footers, logos, signatures, seals
+- [x] Signature and seal governance approval workflow with immutable final locks
+- [x] Full automated test suite passing (6/6 modules)
+- [x] Phase 2 Git Commit
 
-## Phase 3: AI Core & RAG (Pending)
+## Phase 3: AI Core & RAG (Next)
+- [ ] AI provider abstraction (OpenAI, Anthropic, MockAIAdapter)
+- [ ] Usage tracking (Usage entity, tokens, estimated cost, prompt version logging)
+- [ ] Plan quotas and rate limits enforced server-side
+- [ ] Grounded Company Memory RAG pipeline (tenant-isolated retrieval, zero fabrication rule)
+- [ ] AI document generation API (title, sections, sources, warnings, missing_information)
+- [ ] In-app and email notifications (deadlines, expiries, reviews, missing requirements)
+- [ ] Tests: AI reports missing certificates rather than inventing them; tenant memory isolation
+
 ## Phase 4: Tender AI (Pending)
 ## Phase 5: Business Operations & Final Delivery (Pending)

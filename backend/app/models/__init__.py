@@ -46,6 +46,14 @@ from app.models.ai import (
     AIUsageLog,
     Notification,
 )
+from app.models.tender import (
+    RequirementType,
+    MatchingStatus,
+    TenderStatus,
+    Tender,
+    TenderRequirement,
+    TenderProposalSection,
+)
 
 __all__ = [
     "Base",
@@ -89,4 +97,10 @@ __all__ = [
     "Subscription",
     "AIUsageLog",
     "Notification",
+    "RequirementType",
+    "MatchingStatus",
+    "TenderStatus",
+    "Tender",
+    "TenderRequirement",
+    "TenderProposalSection",
 ]

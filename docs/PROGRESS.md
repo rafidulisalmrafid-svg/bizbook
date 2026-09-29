@@ -25,5 +25,18 @@
 - Implemented in-app notification engine (`NotificationType`).
 - Passed 7/7 automated test suites (100% pass rate, 0 warnings).
 
-## Phase 4: Tender AI (Next)
-- Multi-file tender parsing, compliance matrix, requirement matching engine, full proposal generation, readiness scoring, and structured submission ZIP export.
+## Phase 4: Tender AI (COMPLETED)
+- Built Tender parsing and requirement decomposition data models (`Tender`, `TenderRequirement`, `TenderProposalSection`).
+- Alembic migration `638528344fbe_tender_ai_models.py` generated and applied.
+- Implemented automated matching engine connecting requirements to company evidence (projects, team, documents, certifications).
+- Implemented Tender Readiness Scoring algorithm (0-100%) factoring required documents, skills, compliance criteria, and flagged risks.
+- Implemented Multi-Section AI Proposal Generation with zero-hallucination grounding and strict citation of internal document/project IDs.
+- Implemented structured Submission Package ZIP exporter with cover letter, compliance matrix CSV, generated proposal markdown, and bundled evidence documents.
+- Passed 8/8 automated test suites (`test_tender_ai.py`).
+
+## Phase 5: Business Operations (In Progress)
+- Proposals, Quotations (line items, discounts, taxes), Invoices (Draft, Sent, Paid, Partially Paid, Overdue, Cancelled).
+- Portfolio case studies derived from completed projects (client-approved vs private evidence).
+- AI Social Copy generator (LinkedIn, Twitter, Facebook).
+- Executive Dashboard analytics endpoint aggregating active projects, open proposals, pending invoices, active tenders, and expiring documents.
+

@@ -39,6 +39,13 @@ from app.models.document import (
     DocumentTemplate,
     SignatureApprovalWorkflow,
 )
+from app.models.ai import (
+    PlanTier,
+    NotificationType,
+    Subscription,
+    AIUsageLog,
+    Notification,
+)
 
 __all__ = [
     "Base",
@@ -77,4 +84,9 @@ __all__ = [
     "DocumentVersion",
     "DocumentTemplate",
     "SignatureApprovalWorkflow",
+    "PlanTier",
+    "NotificationType",
+    "Subscription",
+    "AIUsageLog",
+    "Notification",
 ]
